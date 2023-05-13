@@ -9,7 +9,7 @@ The SQL Murder Mystery is an engaging puzzle that allows users to employ SQL to 
 ## How to Use
 To experience the mystery yourself, you can download the SQL Murder Mystery database from the [GitHub Repository](https://github.com/NUKnightLab/sql-mysteries) or play it in-browser at [https://mystery.knightlab.com/](https://mystery.knightlab.com/). 
 
-To view my solution, simply open the `solution.sqbpro` file and scroll to the bottom. But what fun is that?
+To view my solution, simply open the `SQL-Murder-Mystery.md` file and scroll to the bottom. But what fun is that?
 
 ## Technologies Used
 - SQLite: The SQL database that stores all the data for the mystery.
