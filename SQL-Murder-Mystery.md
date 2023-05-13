@@ -101,7 +101,10 @@ WHERE membership_status = 'gold' AND id LIKE '48Z%';
 SELECT *
 FROM get_fit_now_member gfnm
 JOIN get_fit_now_check_in gfnci ON gfnm.id = gfnci.membership_id
-WHERE gfnci.check_in_date = 20180115 AND gfnm.membership_status = 'gold' AND gfnci.membership_id LIKE '48Z%';
+WHERE 
+	gfnci.check_in_date = 20180115 
+	AND gfnm.membership_status = 'gold' 
+	AND gfnci.membership_id LIKE '48Z%';
 
 -- No hits. Okay, on to witness two. 'The second witness, named Annabel, lives somewhere on "Franklin Ave".'
 
@@ -129,7 +132,10 @@ WHERE gfnci.check_in_date = 20180109 AND gfnm.name = 'Annabel Miller';
 SELECT *
 FROM get_fit_now_member gfnm
 JOIN get_fit_now_check_in gfnci ON gfnm.id = gfnci.membership_id
-WHERE gfnci.check_in_date = 20180109 AND gfnm.membership_status = 'gold' AND gfnci.membership_id LIKE '48Z%';
+WHERE 
+	gfnci.check_in_date = 20180109 
+	AND gfnm.membership_status = 'gold' 
+	AND gfnci.membership_id LIKE '48Z%';
 
 -- 'Joe Germuska' and 'Jeremy Bowers' again! So, no closer to solving this. Time to start rooting through the other tables!
 
