@@ -16,7 +16,7 @@ To view my solution, simply open the `SQL-Murder-Mystery.md` file and scroll to 
 - DB Browser for SQLite: Used to interact with the SQLite database and write queries.
 
 ## About the Author
-I'm Ernest Devaney, a passionate data enthusiast and SQL aficionado. You can reach out to me at hello@ernestdevaney.com or connect with me on [LinkedIn](https://www.linkedin.com/in/ernest-devaney/).
+I'm Ernest Devaney, a passionate data enthusiast and budding SQL aficionado. You can reach out to me at hello@ernestdevaney.com or connect with me on [LinkedIn](https://www.linkedin.com/in/ernest-devaney/).
 
 ## Acknowledgments
 This project was inspired by the SQL Murder Mystery exercise created by [Knight Lab](https://knightlab.northwestern.edu/).
