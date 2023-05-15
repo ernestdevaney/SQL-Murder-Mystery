@@ -179,41 +179,28 @@ FROM interview
 WHERE person_id = 67318;
 
 /*
-'I was hired by a woman with a lot of money. I don't know her name but I know she's around 5'5&quot; (65&quot;) or 5'7&quot; (67&quot;). She has red hair and she drives a Tesla Model S. I know that she attended the SQL Symphony Concert 3 times in December 2017.'
+'Congrats, you found the murderer! But wait, there's more... If you think you're up for a challenge, try querying the interview transcript of the murderer to find the real villain behind this crime. If you feel especially confident in your SQL skills, try to complete this final step with no more than 2 queries. Use this same INSERT statement with your new suspect to check your answer.'
 */
 
 -- Okay then! Let's find this mystery woman.
 
-SELECT *
-FROM drivers_license
-WHERE 
-	height BETWEEN 65 AND 67
-	AND hair_color = 'red'
-	AND car_make = 'Tesla'
-	AND car_model = 'Model S';
-	
--- Three hits. License id's are 202298, 291182, 918773.
-
-SELECT *
-FROM person
-WHERE license_id IN (202298, 291182, 918773);
-
--- Okay! So their id's are 78881, 90700, 99716. Let's check the fb event table.
-
-SELECT *
-FROM facebook_event_checkin
+SELECT p.*
+FROM drivers_license dl
+JOIN person p
+ON dl.id = p.license_id
+JOIN facebook_event_checkin fec
+ON p.id = fec.person_id
 WHERE
-	event_name = 'SQL Symphony Concert'
-	AND date BETWEEN 20171201 AND 20171231
-	AND person_id IN (78881, 90700, 99716);
-	
--- That was easy! Got our killer, person_id 99716. Let's take off this mask and see who they really are!
+	dl.height BETWEEN 65 AND 67
+	AND dl.hair_color = 'red'
+	AND dl.car_make = 'Tesla'
+	AND dl.car_model = 'Model S'
+	AND fec.event_name = 'SQL Symphony Concert'
+	AND fec.date BETWEEN 20171201 AND 20171231;
 
-SELECT *
-FROM person
-WHERE id = 99716;
 	
--- The killer is... Miranda Priestly! I knew it all along. Let's check to be sure.
+-- Got our killer, Miranda Priestly, of 1883 Golden Ave. Let's check!
+
 
 INSERT INTO solution VALUES (1, 'Miranda Priestly');
         
@@ -223,8 +210,6 @@ INSERT INTO solution VALUES (1, 'Miranda Priestly');
 'Congrats, you found the brains behind the murder! Everyone in SQL City hails you as the greatest SQL detective of all time. Time to break out the champagne!'
 */
 
--- The End
+-- The End ...?
 
-
-
--- ...?</sql><current_tab id="0"/></tab_sql></sqlb_project>
+-- That was a lot of fun! I especially liked having to group those last queries together. I like my queries to be readable so it isn't something I'd do unless instructed, but it was fun to stretch the ol' noggin a bit.</sql><current_tab id="0"/></tab_sql></sqlb_project>
